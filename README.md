@@ -1,5 +1,5 @@
 # css-generate-sources
-实现通过指定格式的文本文件进行Java代码生成以及序列化和反序列化技术：avro|thrift|protobuf
+源码生成通过指定格式的文本文件进行解析生成以及序列化和反序列化技术：avro|thrift|protobuf
 ## 一、avro技术
 ### 1.maven配置
 ```xml
