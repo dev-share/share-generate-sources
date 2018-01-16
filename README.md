@@ -198,7 +198,7 @@ mvn clean compile
 ```bash
 mvn clean compile
 ```
-1)org.xolstice.maven.plugins编译
+2)org.xolstice.maven.plugins编译
 ```bash
 mvn clean protobuf:compile
 ```
