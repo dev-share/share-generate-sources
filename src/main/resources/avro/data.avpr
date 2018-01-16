@@ -1,0 +1,65 @@
+{
+	"namespace": "com.ucloudlink.css.avro.avpr",
+	"protocol": "IUserDao",
+	"doc": "user api",
+	"types": [
+	{
+		"type": "record",
+		 "doc": "组信息",
+		 "name": "Group",
+		 "aliases": ["Group1","Group2"], 
+		 "fields": [
+		     {"name": "id", "type": "long","doc": "主键ID","default": "0"},  
+		     {"name": "name", "type": "string","doc": "名字"},  
+		     {"name": "groupId",  "type": ["int", "null"],"doc": "groupId","default": "1"}
+		 ] 
+	},
+	{
+		"type": "record",
+		 "doc": "组信息",
+		 "name": "Organize",
+		 "aliases": ["Organize1","Organize2"], 
+		 "fields": [
+		     {"name": "id", "type": "long","doc": "主键ID","default": "0"},  
+		     {"name": "name", "type": "string","doc": "名字"},  
+		     {
+		     "name": "group", 
+		     "type": [
+		     	"null",
+		     	{
+		     		"type": "fixed", 
+		     		"name": "Fad", 
+		     		"size": 16
+		     	}
+		     	],
+		     	"doc": "groupId"
+		     }
+		 ] 
+	},
+	{
+		"type": "record",
+		 "doc": "角色信息",
+		 "name": "Role",
+		 "aliases": ["Role1","Role2"], 
+		 "fields": [
+		     {"name": "id", "type": "long","doc": "主键ID","default": "0"},  
+		     {"name": "name", "type": "string","doc": "名字"},  
+		     {"name": "roleId",  "type": ["int", "null"],"doc": "roleId","default": "1"}
+		 ] 
+	}
+	],
+	"messages":{
+		"test1":{
+			  "doc": "Say hello.",  
+		      "request": [
+		      	{"name": "id", "type": "int" }
+		      ],  
+		      "response": "Role"
+		},
+		"test2":{
+			  "doc": "test2.",  
+		      "request": [{"name": "group", "type": "Group" }],  
+		      "response": "null"
+		}
+	}
+}

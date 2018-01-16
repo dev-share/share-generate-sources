@@ -1,0 +1,15 @@
+{"namespace": "com.ucloudlink.css.avro.avsc",  
+ "type": "record",
+ "doc": "用户信息",
+ "name": "User",
+ "aliases": ["User1","User2"], 
+ "fields": [  
+     {"name": "id", "type": "long","doc": "主键ID","default": "0"},  
+     {"name": "name", "type": "string","doc": "名字"},  
+     {"name": "age",  "type": ["int", "null"],"doc": "年龄","default": "1"},  
+     {"name": "list",  "type": [{"type":"array","items":"string"}, "null"],"doc": "年龄","default": "1"},  
+     {"name": "map",  "type": [{"type":"map","values":"long"}, "null"],"doc": "年龄","default": "1"},  
+     {"name": "fmd",  "type": [{"type":"fixed","size":16,"name":"md5"}, "null"],"doc": "年龄","default": "1"},  
+     {"name": "email", "type": ["string", "null"],"doc": "邮箱"}
+ ]  
+}

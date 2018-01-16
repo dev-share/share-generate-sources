@@ -1,0 +1,5 @@
+{ "namespace": "com.ucloudlink.css.avro.avsc", 
+ "type": "enum",  
+  "name": "Suit",  
+  "symbols" : ["SPADES", "HEARTS", "DIAMONDS", "CLUBS"]  
+}  

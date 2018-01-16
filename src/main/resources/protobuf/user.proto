@@ -1,0 +1,13 @@
+syntax = "proto3";
+option java_package = "com.ucloudlink.css.protobuf";
+option java_outer_classname = "UserModel";
+
+message User {
+     int64 id = 1;//id主键
+     string name = 2;
+     string email = 3;
+     int32 age = 4;//age
+     bool sex = 5;
+     repeated string list = 6;
+     map<string,int64> map = 7;
+}
