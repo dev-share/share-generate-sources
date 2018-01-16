@@ -1,8 +1,8 @@
 # css-generate-sources
 实现通过指定格式的文本文件进行Java代码生成以及序列化和反序列化技术：avro|thrift|protobuf
 ## 一、avro技术
-1. Maven配置
-------------
+1.maven配置
+-------------------------------------
 ```xml
 <avro.version>1.8.2</avro.version>
 
@@ -126,8 +126,8 @@ mvn clean compile
 }
 ```
 ## 二、Protobuf技术
-1. Maven配置
-------------
+1.maven配置
+-------------------------------------
 ```xml
 <protobuf.version>3.5.1</protobuf.version>
 
@@ -228,8 +228,8 @@ message User {
 ```
 proto3已经移除proto2中的required、optional、default等
 ## 三、thrift技术
-1. Maven配置
-------------
+1.maven配置
+-------------------------------------
 ```xml
 <thrift.version>0.10.0</thrift.version>
 
