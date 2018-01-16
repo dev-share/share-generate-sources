@@ -14,40 +14,35 @@
 		<protobuf.version>3.5.1</protobuf.version>
 	</properties>
 	<dependencies>
-		<!-- <dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro</artifactId>
-			<version>${avro.version}</version>
-		</dependency> -->
 		<dependency>
 			<groupId>org.apache.avro</groupId>
 			<artifactId>avro-tools</artifactId>
 			<version>${avro.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.thrift</groupId>
-		    <artifactId>libthrift</artifactId>
-		    <version>${thrift.version}</version>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>${thrift.version}</version>
 		</dependency>
 		<dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-            <version>${protobuf.version}</version>
-        </dependency>
-        <dependency>
-		    <groupId>io.grpc</groupId>
-		    <artifactId>grpc-all</artifactId>
-		    <version>1.9.0</version>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>${protobuf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-all</artifactId>
+			<version>1.9.0</version>
 		</dependency>
 	</dependencies>
 	<build>
 		<extensions>
-		      <extension>
-			        <groupId>kr.motd.maven</groupId>
-			        <artifactId>os-maven-plugin</artifactId>
-			        <version>1.5.0.Final</version>
-		      </extension>
-	    </extensions>
+			<extension>
+				<groupId>kr.motd.maven</groupId>
+				<artifactId>os-maven-plugin</artifactId>
+				<version>1.5.0.Final</version>
+			</extension>
+		</extensions>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -66,8 +61,8 @@
 						<phase>generate-sources</phase>
 						<goals>
 							<goal>schema</goal>
-							<goal>protocol</goal>  
-                			<goal>idl-protocol</goal>
+							<goal>protocol</goal>
+							<goal>idl-protocol</goal>
 						</goals>
 						<configuration>
 							<sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
@@ -78,62 +73,64 @@
 				</executions>
 			</plugin>
 			<plugin>
-                <groupId>org.apache.thrift.tools</groupId>
-                <artifactId>maven-thrift-plugin</artifactId>
-                <version>0.1.11</version>
-                <configuration>
-                    <!-- <thriftExecutable>${project.basedir}/src/main/resources/thrift/thrift-0.11.0.exe</thriftExecutable> -->
-                    <thriftSourceRoot>${project.basedir}/src/main/resources/thrift/</thriftSourceRoot>
-                    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                    <generator>java</generator>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>thrift-sources</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>compile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.github.igor-petruk.protobuf</groupId>
-                <artifactId>protobuf-maven-plugin</artifactId>
-                <version>0.6.5</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <inputDirectories><inputDirectory>${project.basedir}/src/main/resources/protobuf/</inputDirectory></inputDirectories>
-                    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                </configuration>
-            </plugin>
-             <plugin>
-                <groupId>org.xolstice.maven.plugins</groupId>
-                <artifactId>protobuf-maven-plugin</artifactId>
-                <version>0.5.1</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:3.5.1-1:exe:${os.detected.classifier}</protocArtifact>
-			        <pluginId>grpc-java</pluginId>
-			        <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.9.0:exe:${os.detected.classifier}</pluginArtifact>
-			        <protoSourceRoot>${project.basedir}/src/main/resources/protobuf/</protoSourceRoot>
-			        <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compile</goal>
-                            <goal>compile-custom</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+				<groupId>org.apache.thrift.tools</groupId>
+				<artifactId>maven-thrift-plugin</artifactId>
+				<version>0.1.11</version>
+				<configuration>
+					<!-- <thriftExecutable>${project.basedir}/src/main/resources/thrift/thrift-0.11.0.exe</thriftExecutable> -->
+					<thriftSourceRoot>${project.basedir}/src/main/resources/thrift/</thriftSourceRoot>
+					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+					<generator>java</generator>
+				</configuration>
+				<executions>
+					<execution>
+						<id>thrift-sources</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.igor-petruk.protobuf</groupId>
+				<artifactId>protobuf-maven-plugin</artifactId>
+				<version>0.6.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<inputDirectories>
+						<inputDirectory>${project.basedir}/src/main/resources/protobuf/</inputDirectory>
+					</inputDirectories>
+					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.xolstice.maven.plugins</groupId>
+				<artifactId>protobuf-maven-plugin</artifactId>
+				<version>0.5.1</version>
+				<extensions>true</extensions>
+				<configuration>
+					<protocArtifact>com.google.protobuf:protoc:3.5.1-1:exe:${os.detected.classifier}</protocArtifact>
+					<pluginId>grpc-java</pluginId>
+					<pluginArtifact>io.grpc:protoc-gen-grpc-java:1.9.0:exe:${os.detected.classifier}</pluginArtifact>
+					<protoSourceRoot>${project.basedir}/src/main/resources/protobuf/</protoSourceRoot>
+					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>compile-custom</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
