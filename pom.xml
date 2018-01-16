@@ -28,7 +28,6 @@
 		    <groupId>org.apache.thrift</groupId>
 		    <artifactId>libthrift</artifactId>
 		    <version>${thrift.version}</version>
-		    <type>pom</type>
 		</dependency>
 		<dependency>
             <groupId>com.google.protobuf</groupId>
@@ -78,14 +77,15 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
                 <groupId>org.apache.thrift.tools</groupId>
                 <artifactId>maven-thrift-plugin</artifactId>
                 <version>0.1.11</version>
                 <configuration>
-                    <thriftExecutable>${project.basedir}/src/main/resources/thrift</thriftExecutable>
+                    <!-- <thriftExecutable>${project.basedir}/src/main/resources/thrift/thrift-0.11.0.exe</thriftExecutable> -->
                     <thriftSourceRoot>${project.basedir}/src/main/resources/thrift/</thriftSourceRoot>
                     <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                    <generator>java</generator>
                 </configuration>
                 <executions>
                     <execution>
@@ -95,16 +95,9 @@
                             <goal>compile</goal>
                         </goals>
                     </execution>
-                    <execution>
-                        <id>thrift-test-sources</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
                 </executions>
-            </plugin> -->
-            <!-- <plugin>
+            </plugin>
+            <plugin>
                 <groupId>com.github.igor-petruk.protobuf</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.6.5</version>
@@ -119,7 +112,7 @@
                     <inputDirectories><inputDirectory>${project.basedir}/src/main/resources/protobuf/</inputDirectory></inputDirectories>
                     <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                 </configuration>
-            </plugin> -->
+            </plugin>
              <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>

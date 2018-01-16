@@ -236,9 +236,10 @@ proto3已经移除proto2中的required、optional、default等
 	<artifactId>maven-thrift-plugin</artifactId>
 	<version>0.1.11</version>
 	<configuration>
-	    <thriftExecutable>${project.basedir}/src/main/resources/thrift</thriftExecutable>
+	    <!-- <thriftExecutable>${project.basedir}/src/main/resources/thrift/thrift-0.11.0.exe</thriftExecutable> -->
 	    <thriftSourceRoot>${project.basedir}/src/main/resources/thrift/</thriftSourceRoot>
 	    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+	    <generator>java</generator>
 	</configuration>
 	<executions>
 	    <execution>
@@ -246,13 +247,6 @@ proto3已经移除proto2中的required、optional、default等
 		<phase>generate-sources</phase>
 		<goals>
 		    <goal>compile</goal>
-		</goals>
-	    </execution>
-	    <execution>
-		<id>thrift-test-sources</id>
-		<phase>generate-test-sources</phase>
-		<goals>
-		    <goal>testCompile</goal>
 		</goals>
 	    </execution>
 	</executions>
