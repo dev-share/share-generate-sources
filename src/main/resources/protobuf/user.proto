@@ -1,5 +1,5 @@
 syntax = "proto3";
-option java_package = "com.ucloudlink.css.protobuf";
+option java_package = "com.devzy.share.protobuf";
 option java_outer_classname = "UserModel";
 
 message User {

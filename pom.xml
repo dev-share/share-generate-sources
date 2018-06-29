@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ucloudlink.css</groupId>
-	<artifactId>css-generate-sources</artifactId>
+	<groupId>com.devzy.share</groupId>
+	<artifactId>share-generate-sources</artifactId>
 	<version>1.0</version>
-	<name>css-generate-sources</name>
-	<description>css-generate-sources</description>
+	<name>share-generate-sources</name>
+	<description>share-generate-sources</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<project.source.encoding>UTF-8</project.source.encoding>
@@ -58,6 +58,7 @@
 				<version>${avro.version}</version>
 				<executions>
 					<execution>
+						<id>schemas</id>
 						<phase>generate-sources</phase>
 						<goals>
 							<goal>schema</goal>
@@ -72,12 +73,12 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.thrift.tools</groupId>
 				<artifactId>maven-thrift-plugin</artifactId>
 				<version>0.1.11</version>
 				<configuration>
-					<!-- <thriftExecutable>${project.basedir}/src/main/resources/thrift/thrift-0.11.0.exe</thriftExecutable> -->
+					<thriftExecutable>${project.basedir}/src/main/resources/thrift/thrift-0.11.0.exe</thriftExecutable>
 					<thriftSourceRoot>${project.basedir}/src/main/resources/thrift/</thriftSourceRoot>
 					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
 					<generator>java</generator>
@@ -91,8 +92,8 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
+			</plugin> -->
+			<!-- <plugin>
 				<groupId>com.github.igor-petruk.protobuf</groupId>
 				<artifactId>protobuf-maven-plugin</artifactId>
 				<version>0.6.5</version>
@@ -109,7 +110,7 @@
 					</inputDirectories>
 					<outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.xolstice.maven.plugins</groupId>
 				<artifactId>protobuf-maven-plugin</artifactId>
@@ -126,7 +127,6 @@
 					<execution>
 						<goals>
 							<goal>compile</goal>
-							<goal>compile-custom</goal>
 						</goals>
 					</execution>
 				</executions>

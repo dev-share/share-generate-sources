@@ -1,4 +1,4 @@
-{"namespace": "com.ucloudlink.css.avro.avsc",  
+{"namespace": "com.devzy.share.avro.avsc",  
  "type": "record",
  "doc": "用户信息",
  "name": "User",

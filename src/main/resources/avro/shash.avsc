@@ -1,6 +1,6 @@
 {  
   "type": "record",  
-  "name": "HandshakeResponse", "namespace": "com.ucloudlink.css.avro.ipc",  
+  "name": "HandshakeResponse", "namespace": "com.devzy.share.avro.ipc",  
   "fields": [  
     {"name": "match",  
      "type": {"type": "enum", "name": "HandshakeMatch",  

@@ -1,5 +1,5 @@
-namespace cpp com.ucloudlink.css.thrift 
-namespace java com.ucloudlink.css.thrift
+namespace cpp com.devzy.share.thrift 
+namespace java com.devzy.share.thrift
 
 struct EntUserBean {
     1:i64 EntUserID;    

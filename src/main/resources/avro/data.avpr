@@ -1,5 +1,5 @@
 {
-	"namespace": "com.ucloudlink.css.avro.avpr",
+	"namespace": "com.devzy.share.avro.avpr",
 	"protocol": "IUserDao",
 	"doc": "user api",
 	"types": [
