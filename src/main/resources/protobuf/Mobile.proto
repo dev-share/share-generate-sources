@@ -1,0 +1,412 @@
+syntax = "proto2";
+package cn.com.kjcx.emgw.domain.protobuf;
+
+option java_package = "cn.com.kjcx.emgw.domain.protobuf";
+
+message BufferCharge {
+	// ------------------------基本信息
+	// 服务提供商ID
+	required int64 spID = 1;
+	// 客户ID
+	required int64 companyID = 2;
+	// 应用ID
+	required int64 appID = 3;
+	// 应用名称
+	required string appName = 4;
+	//产品ID
+	required int64 productID = 5;
+	// ------------------------数据
+	//条数计费
+	required int32 chargeByItem = 6;
+	//金额计费
+	required int32 chargeByMoney = 7;
+}
+
+message BufferReport {
+	// ------------------------数据
+	//通道ID
+	required int64 channelID = 1;
+	//通道消息ID
+	required string channelMessageID = 2;
+	//目的号码
+	required string destNumber = 3;
+	//源号码
+	required string srcNumber = 4;
+	//状态报告
+	required string reportStatus = 5;
+	//状态报告时间
+	required string reportTime = 6;
+}
+
+message CacheReport {
+	// ------------------------基本信息
+	// 服务提供商ID
+	required int64 spID = 1;
+	// 客户ID
+	required int64 companyID = 2;
+	// 应用ID
+	required int64 appID = 3;
+	// 应用名称
+	required string appName = 4;
+	// 产品ID
+	required int64 productID = 5;
+	// ------------------------数据
+	//日志表名
+	required string logTableName = 6;
+	//通道消息ID
+	required string messageID = 7;
+	//通道ID
+	required int64 channelID = 8;
+	//唯一ID
+	required string uniqueID = 9;
+	// 目的号码类型
+	required string provider = 10;
+	//客户参考信息
+	required string reference = 11;
+	//通道消息ID
+	required string channelMessageID = 12;
+	//目的号码
+	required string destNumber = 13;
+	//源号码
+	required string srcNumber = 14;
+	//提交时间
+	required string submitTime = 15;
+	//状态报告
+	optional string reportStatus = 16;
+	//状态报告时间
+	optional string reportTime = 17;
+	//批次ID
+	optional string batchID = 18;
+	//应用提交时间
+	required string appSubmitTime = 19;
+	//来源网关
+	required int64 fromGateWay = 20;
+	// 原始扩展号
+	optional string originalExtSrc = 21;
+}
+
+message CacheMo {
+	// ------------------------基本信息
+	// 应用ID
+	required int64 appID = 1;
+	// ------------------------数据
+	//内容ID
+	required string uniqueID = 2;
+	//提交时间
+	required string submitTime = 3;
+	//下行签名
+	required string sign = 4;
+	//客户参考信息
+	required string reference = 5;
+	// 原始扩展号
+	required string originalExtSrc = 6;
+	//来源网关
+	required int64 fromGateWay = 7;
+}
+
+message BufferReportPush {
+	// ------------------------基本信息
+	// 应用ID
+	required int64 appID = 1;
+	// ------------------------数据
+	//通道消息ID
+	required string messageID = 2;
+	//目的号码
+	required string destNumber = 3;
+	//源号码
+	required string srcNumber = 4;
+	//提交时间
+	required string submitTime = 5;
+	//状态报告
+	required string reportStatus = 6;
+	//状态报告时间
+	required string reportTime = 7;
+	//客户参考信息
+	required string reference = 8;
+	//推送次数计数
+	required int32 pushTimes = 9;
+	//来源网关
+	required int64 fromGateWay = 10;
+	// 原始扩展号
+	optional string originalExtSrc = 11;
+}
+
+message BufferMo {
+	// ------------------------数据
+	//通道ID
+	required int64 channelID = 1;
+	//通道消息ID
+	required string channelMessageID = 2;
+	//目的号码
+	required string destNumber = 3;
+	//源号码
+	required string srcNumber = 4;
+	//内容
+	required string content = 5;
+	//上行时间
+	required string receiveTime = 6;
+	//消息编码
+	optional int32 msgFmt = 7;
+	//二进制内容
+	optional string binaryContent = 8;
+}
+
+message MoLog {
+	// ------------------------基本信息
+	// 服务提供商ID
+	required int64 spID = 1;
+	// 应用ID
+	required int64 appID = 2;
+	// ------------------------数据
+	//通道ID
+	required int64 channelID = 3;
+	//通道消息ID
+	required string channelMessageID = 4;
+	//目的号码
+	required string destNumber = 5;
+	//源号码
+	required string srcNumber = 6;
+	//内容
+	required string content = 7;
+	//消息编码
+	optional int32 msgFmt = 8;
+	//二进制内容
+	optional string binaryContent = 9;
+	//上行时间
+	required string receiveTime = 10;
+	//内容ID
+	required string uniqueID = 11;
+	//客户参考信息
+	required string reference = 12;
+	// 原始扩展号
+	required string originalExtSrc = 13;
+	//来源网关
+	required int64 fromGateWay = 14;
+	//推送次数计数
+	optional int32 pushTimes = 15;
+	//下行签名
+	required string sign = 16;
+}
+
+message BufferMt {
+	// ------------------------基本信息
+	// 服务提供商ID
+	required int64 spID = 1;
+	// 客户ID
+	required int64 companyID = 2;
+	// 应用ID
+	required int64 appID = 3;
+	// 应用名称
+	required string appName = 4;
+	// 产品ID
+	required int64 productID = 5;
+	// ------------------------用户数据
+	// 消息ID
+	required string messageID = 6;
+	// 原始扩展号
+	required string originalExtSrc = 7;
+	// 目的号码
+	required string destNumber = 8;
+	// 内容
+	required string content = 9;
+	// 消息类型
+	required int32 msgFormat = 10;
+	//客户参考信息
+	required string reference = 11;
+	//应用提交时间
+	required string appSubmitTime = 12;
+	//来源网关
+	required int64 fromGateWay = 13;
+	// 模板编码
+	optional string tplCode = 14;
+	// 模板变量
+	optional string tplParams = 15;
+	//信息存活有效期
+	required string validTime = 16;
+	// ------------------------业务数据
+	//唯一ID
+	required string uniqueID = 17;
+	// 产品ID
+	required int64 channelID = 18;
+	//消息类型
+	required string messageType = 19;
+	//消息标签
+	required string messageMark = 20;
+	// 目的号码类型
+	required string provider = 21;
+	//-----------------------控制信息
+	//
+	required Controller controller = 22;
+}
+
+message Message {
+	// ------------------------基本信息
+	// 服务提供商ID
+	required int64 spID = 1;
+	// 客户ID
+	required int64 companyID = 2;
+	// 应用ID
+	required int64 appID = 3;
+	// 应用名称
+	required string appName = 4;
+	// 产品ID
+	required int64 productID = 5;
+	// ------------------------用户数据
+	// 消息ID
+	required string messageID = 6;
+	// 原始扩展号
+	required string originalExtSrc = 7;
+	//最终扩展号
+	required string finalExtSrc = 8;
+	//签名扩展号
+	required string signExtSrc = 9;
+	// 目的号码
+	required string destNumber = 10;
+	// 内容
+	required string content = 11;
+	// 消息类型
+	required int32 msgFormat = 12;
+	//客户参考信息
+	required string reference = 13;
+	// 模板编码
+	optional string tplCode = 14;
+	// 模板变量
+	optional string tplParams = 15;
+	//信息存活有效期
+	required string validTime = 16;
+	// ------------------------业务数据
+	//唯一ID
+	required string uniqueID = 17;
+	// 产品ID
+	required int64 channelID = 18;
+	//审核批次号
+	required string batchID = 19;
+	// 目的号码类型
+	required string provider = 20;
+	// 省份
+	required string province = 21;
+	// 城市
+	required string city = 22;
+	// 源号码
+	required string srcNumber = 23;
+	// 发送标志
+	required string sendFlag = 24;
+	// 优先级
+	required int32 priority = 25;
+	//消息类型
+	required string messageType = 26;
+	//消息标签
+	required string messageMark = 27;
+	//应用提交时间
+	required string appSubmitTime = 28;
+	//来源网关
+	required int64 fromGateWay = 29;
+	// ------------------------通道数据
+	// 通道MSGID
+	optional string channelMessageID = 30;
+	// 提交时间
+	optional string submitTime = 31;
+	// 提交状态
+	optional string submitStatus = 32;
+	// 状态报告时间
+	optional string reportTime = 33;
+	// 状态报告状态
+	optional string reportStatus = 34;
+	// 长短信总条数
+	optional int32 lmTotal = 35;
+	// 长短信顺序号
+	optional int32 lmSequence = 36;
+	//通道消息列表
+	repeated string channelMessageIDList = 37;
+	//假定的通道ID
+	required int64 supposeChannelID = 38;
+	// ------------------------控制信息
+	//
+	required Controller controller = 39;
+	optional int64 randomSequence = 40;
+	optional string orginStatus = 41;
+	//计费号码
+	optional string feeNumber = 42;
+	//计费号码省份
+	optional string feeProvince = 43;
+}
+
+message Controller {
+	// ID
+	optional int64 id = 1;
+	// 下行日志表
+	optional string logTableName = 2;
+	//是否是回执
+	optional bool isReport = 3;
+	//签名
+	optional string sign = 4;
+	//签名信息
+	optional string signInfo = 5;
+	//直接免审通过
+	optional bool directPass = 6;
+	//直接免审通过备注
+	optional string directPassNotice = 7;
+	//审核提示
+	optional string checkNotice = 8;
+	//条数计费
+	optional int32 chargeByItem = 9;
+	//金额计费
+	optional int32 chargeByMoney = 10;
+	//包大小
+	optional int32 pkSize = 11;
+	//按内容当天的计数
+	required int32 contentDayCount = 12;
+	//模板类型
+	optional int32 tplType = 13;
+}
+
+//号码的黑白状态
+message DestNumberWhiteBlackStatus {
+	//全局状态，按位存储，1字节
+	required string globalStatus = 1;
+	//回复的账户和签名，数组，值格式：账户ID+逗号+签名
+	repeated string huiFuAppSign = 2;
+}
+
+message BufferMtBean {
+	required BufferMt bufferMt = 1;
+}
+
+message DatabaseMapping {
+	enum Provider {
+		unknown = 0;
+		cmcc = 1;
+		unicom = 2;
+		telecom = 3;
+		international = 4;
+	}
+	enum ProductType {
+		sms = 0;
+		mms = 1;
+		outbound = 2;
+		non = 3;
+    }
+}
+
+message Sorting {
+	required DatabaseMapping.Provider key = 1;
+	repeated string value = 2;
+}
+
+message ChargeNumMap {
+	required DatabaseMapping.Provider key = 1;
+	required int32 value = 2;
+}
+
+message BufferAPITaskBean {
+	required BufferMtBean mt = 1;
+	repeated Sorting sorting = 2;
+	repeated ChargeNumMap chargeNumMap = 3;
+	required DatabaseMapping.ProductType productType=4;
+	required string orderTime = 5;
+	required bool isMaLeiMessage = 6;
+	required int64 parentAppID = 7;
+	required int32 similarityType = 8;
+	required int32 similarityScore = 9;
+	required int32 contentDayCount = 10;
+}

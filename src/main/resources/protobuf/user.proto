@@ -11,3 +11,28 @@ message User {
      repeated string list = 6;
      map<string,int64> map = 7;
 }
+
+message BufferAPITaskBean {
+	BufferMtBean mt = 1;
+	enum Provider {
+		unknown = 1;
+		cmcc = 2;
+		unicom = 3;
+		telecom = 4;
+		international = 5;
+	}
+	enum ProductType {
+		sms = 1;
+		mms = 2;
+		outbound = 3;
+		non = 4;
+    }
+	map<enum Provider, repeated string>	sorting = 2;
+	map<enum Provider, int32>	chargeNumMap = 3;
+	string orderTime = 4;
+	bool isMaLeiMessage = 5;
+	int64 parentAppID = 6;
+	int32 similarityType = 7;
+	int32 similarityScore = 8;
+	int32 contentDayCount = 9;
+}

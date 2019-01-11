@@ -1,0 +1,58 @@
+syntax = "proto3";
+option java_package = "cn.com.kjcx.emgw.domain.protobuf";
+// option java_outer_classname="Mobile";
+// import "Mobile.proto";  
+message DatabaseMapping {
+	enum Provider {
+		unknown = 0;
+		cmcc = 1;
+		unicom = 2;
+		telecom = 3;
+		international = 4;
+	}
+	enum ProductType {
+		sms = 0;
+		mms = 1;
+		outbound = 2;
+		non = 3;
+    }
+}
+
+message Sorting {
+	MobileUtil.Provider key = 1;
+	repeated string value = 2;
+}
+
+message ChargeNumMap {
+	MobileUtil.Provider key = 1;
+	int32 value = 2;
+}
+
+message BufferAPITaskBean {
+	BufferMtBean mt = 1;
+	repeated Sorting sorting = 2;
+	repeated ChargeNumMap chargeNumMap = 3;
+	DatabaseMapping.ProductType productType=4;
+	string orderTime = 5;
+	bool isMaLeiMessage = 6;
+	int64 parentAppID = 7;
+	int32 similarityType = 8;
+	int32 similarityScore = 9;
+	int32 contentDayCount = 10;
+}
+
+message List {
+	repeated string value = 1;
+}
+
+message BufferTaskBean {
+	BufferMtBean mt = 1;
+	map<MobileUtil.Provider,List>	sorting = 2;
+	map<MobileUtil.Provider,int32>	chargeNumMap = 3;
+	string orderTime = 4;
+	bool isMaLeiMessage = 5;
+	int64 parentAppID = 6;
+	int32 similarityType = 7;
+	int32 similarityScore = 8;
+	int32 contentDayCount = 9;
+}
